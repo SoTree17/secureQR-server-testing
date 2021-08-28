@@ -13,7 +13,9 @@ public class MvcConfiguration implements WebMvcConfigurer {
     public void addResourceHandlers(final ResourceHandlerRegistry registry){
         /*registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/templates/", "classpath:/static/", "classpath:/imgs/")
-                .setCacheControl(CacheControl.maxAge(10 ,TimeUnit.MINUTES));*/
+                .setCacheControl(CacheControl.maxAge(10 ,TimeUnit.MINUTES));
+                //히히
+                */
 
         registry.addResourceHandler("/qrImg/**")
                 .addResourceLocations("file:///c:/TestQR/qrImg/");
