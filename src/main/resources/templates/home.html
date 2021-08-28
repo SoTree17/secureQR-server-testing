@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>테스트용 시연 페이지</title>
+</head>
+<body>
+<h3> 테스트용 시연 페이지입니다.</h3>
+<p> 암호화된 QR 코드를 생성합니다. 다음의 빈칸을 채워주세요.</p>
+<form action="/request" method ="post">
+    <fieldset>
+        <legend>암호화 QR 정보 입력</legend>
+        authUrl : <input type="text" name="authUrl" value="https:// "><br>
+        암호화할 url : <input type="text" name="data"><br>
+        암호화 방법 : <input type="number" name="index"><br>
+        QR코드 가로 : <input type="number" name="width"><br>
+        QR코드 세로 : <input type="number" name="height"><br>
+        <button type="submit" id="after">전송</button>
+        <button type="reset">리셋</button>
+    </fieldset>
+</form>
+<div>
+    <!-- 응답 byte[] 이미지로 렌더링 후 관련 로직-->
+    <img src="/qrImg/Test1.png" alt="QR이미지 생성 대기중"/>
+    <!--<img th:src="@{/img/Test3.png}">-->
+    <!-- <img id="qr" th:src="@{/qrImg/Test5.png}" alt="qr생성 대기중"/>-->
+</div>
+<script>
+
+
+
+</script>
+
+
+
+</body>
+</html>
