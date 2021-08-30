@@ -42,7 +42,7 @@ public class ClientController {
         log.info(new String(result, StandardCharsets.UTF_8));
         // 응답 받은 byte[] 배열 이미지로 렌더링
         //qrService.createQRImage(result, "src//main//resources//imgs//Test5.png");
-        qrService.createQRImage(result, "C:\\TestQR\\qrImg\\Test1.png");
+        qrService.createQRImage(result, "C:\\TestQR\\qrImg\\Test3.png");
 
         // 화면에 보여주기
         log.info("이미지 렌더링 완료");
