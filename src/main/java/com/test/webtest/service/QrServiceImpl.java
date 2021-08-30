@@ -21,10 +21,11 @@ public class QrServiceImpl implements QrService{
         SecureQrCryptoAES256 aes256 = new SecureQrCryptoAES256();
         aes256.setKey("00000000000000000000000000000000");
         arr.add(new SecureQrHashMD5(), aes256);
+        int d_index = arr.addData(qrDTO.getData());
 
         if(!isNull(qrDTO)){
             return gen.createSecureQRCode(arr, qrDTO.getAuthUrl(),
-                    qrDTO.getData(), qrDTO.getIndex(), qrDTO.getWidth(), qrDTO.getHeight());
+                    qrDTO.getC_index(), d_index, qrDTO.getWidth(), qrDTO.getHeight());
         }else{
             return null;
         }
