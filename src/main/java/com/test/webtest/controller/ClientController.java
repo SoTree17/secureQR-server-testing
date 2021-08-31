@@ -23,6 +23,7 @@ import retrofit2.Response;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -51,7 +52,7 @@ public class ClientController {
     @RequestMapping ("/request")
     public String connectToServer(QrDTO qrDTO) throws Exception{
         log.info(qrDTO.toString());
-        // authUrl, data, index, width, height 입력을 서버로 전달
+        // authUrl, data, c_index, width, height 입력을 서버로 전달
         byte[] result = qrService.createSecureQRCode(arr, qrDTO);
         log.info(new String(result, StandardCharsets.UTF_8));
         // 응답 받은 byte[] 배열 이미지로 렌더링
@@ -82,6 +83,4 @@ public class ClientController {
         qrService.createQRImage(result, "C:\\TestQR\\qrImg\\Test3.png");
 
     }
-
-
 }
