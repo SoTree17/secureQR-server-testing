@@ -21,7 +21,7 @@ public class ServerController {
 
     @Autowired
     private QrService qrService;
-    private static SecureQrCryptoArray arr;
+    private SecureQrCryptoArray arr;
 
     @PostMapping(value="/createQR")
     public byte[] createQR(@RequestBody QrDTO qrDTO) throws IOException {
