@@ -7,10 +7,10 @@
 <body>
 <h3> 테스트용 시연 페이지입니다.</h3>
 <p> 암호화된 QR 코드를 생성합니다. 다음의 빈칸을 채워주세요.</p>
-<form action="/request" method ="post">
+<form action="/requestQR" method ="post">
     <fieldset>
         <legend>암호화 QR 정보 입력</legend>
-        authUrl : <input type="text" name="authUrl" value="https:// "><br>
+        authUrl : <input type="text" name="authUrl" value="http://ec2-3-37-43-9.ap-northeast-2.compute.amazonaws.com:8080/"><br>
         암호화할 url : <input type="text" name="data"><br>
         암호화 방법 : <input type="number" name="c_index"><br>
         QR코드 가로 : <input type="number" name="width"><br>
@@ -21,7 +21,7 @@
 </form>
 <div>
     <!-- 응답 byte[] 이미지로 렌더링 후 관련 로직-->
-    <img src="/qrImg/Test3.png" alt="QR이미지 생성 대기중"/>
+    <img src="/qrImg/Server-Test.png" alt="QR이미지 생성 대기중"/>
     <!--<img th:src="@{/img/Test3.png}">-->
     <!-- <img id="qr" th:src="@{/qrImg/Test5.png}" alt="qr생성 대기중"/>-->
 </div>

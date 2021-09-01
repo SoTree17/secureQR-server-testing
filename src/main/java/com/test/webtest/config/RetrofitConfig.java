@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class RetrofitConfig {
 
-    private static String BaseUrl = "https://blablah"; // endpoint
+    private static String BaseUrl = "http://ec2-3-37-43-9.ap-northeast-2.compute.amazonaws.com:8080/"; // endpoint
 
     @Bean(name="okHttpClient")
     public OkHttpClient okHttpClient(){

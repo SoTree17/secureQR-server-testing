@@ -23,6 +23,7 @@ import retrofit2.Response;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -71,15 +72,16 @@ public class ClientController {
     @PostMapping("/requestQR")
     public void request(QrDTO qrDTO) throws Exception{
         // HTTP Body
-        String requestJson = new Gson().toJson(qrDTO, JsonObject.class);
+        String requestJson = new Gson().toJson(qrDTO);
         String resourcePath = "generator";
+        log.info(requestJson);
+
         // 요청
         Call<ResponseBody> call = restInterface.generateQR(CONTENT_TYPE, resourcePath,requestJson);
         Response<ResponseBody> response= call.execute();
         byte[] result = response.body().bytes();
-
         // 저장 - home.html 에서 이미지 보여줌
-        qrService.createQRImage(result, "C:\\TestQR\\qrImg\\Test3.png");
+        qrService.createQRImage(result, "C:\\TestQR\\qrImg\\Server-Test.png");
 
     }
 }
