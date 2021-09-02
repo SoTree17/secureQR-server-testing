@@ -1,3 +1,4 @@
+/*
 package com.test.webtest.config;
 
 import com.test.webtest.service.rest.RestInterface;
@@ -13,8 +14,8 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class RetrofitConfig {
 
-    private static String BaseUrl = "http://ec2-3-37-43-9.ap-northeast-2.compute.amazonaws.com:8080/"; // endpoint
-
+    //private static String BaseUrl = "http://ec2-3-37-43-9.ap-northeast-2.compute.amazonaws.com:8080/"; // endpoint
+    private static String BaseUrl = "http://localhost:8080/"; // endpoint
     @Bean(name="okHttpClient")
     public OkHttpClient okHttpClient(){
         return new OkHttpClient.Builder().connectTimeout(20, TimeUnit.SECONDS)
@@ -35,3 +36,4 @@ public class RetrofitConfig {
         return retrofit.create(RestInterface.class);
     }
 }
+*/
