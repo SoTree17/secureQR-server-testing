@@ -18,9 +18,11 @@ public class QrServiceImpl implements QrService{
     Generator gen = new Generator();
     @Override
     public byte[] createSecureQRCode(SecureQrCryptoArray arr, QrDTO qrDTO) throws IOException {
+        // 테스트 용 arr 초기화
         SecureQrCryptoAES256 aes256 = new SecureQrCryptoAES256();
         aes256.setKey("00000000000000000000000000000000");
         arr.add(new SecureQrHashMD5(), aes256);
+
         int d_index = arr.addData(qrDTO.getData());
 
         if(!isNull(qrDTO)){
