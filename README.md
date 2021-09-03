@@ -20,4 +20,7 @@
 
 
 
+### QR 코드 생성 페이지
+![home](https://user-images.githubusercontent.com/48395704/132034582-11c36a78-79ae-40e9-8f3d-e806115c6237.gif)
+
 
