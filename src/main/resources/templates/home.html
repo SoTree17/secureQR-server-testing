@@ -16,6 +16,32 @@
 
     <link rel="stylesheet" type="text/css" href="/css/helper.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script>
+        function imgPop(){
+            const url = '/qrImg/Server-Test.png'
+            let img=new Image();
+            img.src = url;
+            const img_width=img.width;
+            const win_width=img.width+25;
+            const img_height=img.height;
+            const left = (screen.width/2)-(img_width/2);
+            const top = (screen.height/2)-(img_height-2);
+            let OpenWindow=window.open(url,'_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto,left='+left+',top='+top);
+            OpenWindow.resizeTo(250,250);
+        }
+        /*$(document).ready(function(){
+            var formObj = $("form[role='form']");
+
+            $('#popupBtn').on("click", function()){
+                var url = $("#url").val(); //
+                const tab_width=500;
+                var OpenWindow = window.open(url, '_blank', 'width='+500+', height='+500+', menubars=no, scrollbars=auto');
+                OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+tab_width+"'>");
+            }
+        })*/
+
+
+    </script>
 
 </head>
 <body>
@@ -58,7 +84,7 @@
                 </div>
 
                 <div class="container-qr-form-btn">
-                    <button class="qr-form-btn">
+                    <button class="qr-form-btn" type="submit" id = 'popupBtn' onclick="imgPop()">
                         Create
                     </button>
                 </div>
@@ -69,6 +95,6 @@
 
 <script src="/libs/jquery/jquery-3.2.1.min.js"></script>
 <script src="/js/main.js"></script>
-
+<!--<scirpt src="/js/popup.js"></scirpt>-->
 </body>
 </html>

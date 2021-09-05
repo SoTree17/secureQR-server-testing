@@ -23,10 +23,11 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -39,6 +40,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -84,7 +87,7 @@ public class ClientController {
      * 'org.apache.httpcomponents:httpclient:4.5.13' 이용
      */
     @PostMapping("/requestQR")
-    public String request(QrDTO qrDTO) throws ClientProtocolException, IOException, URISyntaxException {
+    public String request(QrDTO qrDTO, Model model) throws ClientProtocolException, IOException, URISyntaxException {
 
         CloseableHttpClient client = HttpClients.createDefault();
 
@@ -127,9 +130,23 @@ public class ClientController {
 
         client.close();
 
+        model.addAttribute("url", "/qrImg/Server-Test.png");
         return "redirect:";
     }
+    /* 동적으로 이미지 경로 처리*/
+    /*@GetMapping("/{dir}/{fileName}")
+    public ResponseEntity<Map<String, String>> getImgPath (@PathVariable("dir") String dir ,@PathVariable("fileName") String fileName){
+        try{
+            Map<String, String> map = new HashMap<>();
+            map.put("url", "/"+dir+"/"+fileName+);
+            return new ResponseEntity<>(map, HttpStatus.OK);
+        }catch(Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
 
+
+    }*/
 
     // TODO Restrofit 사용 하려했는데 자꾸 Body가 NULL 이였음
     /**
