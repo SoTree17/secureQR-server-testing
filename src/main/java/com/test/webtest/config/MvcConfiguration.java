@@ -11,12 +11,6 @@ import java.util.concurrent.TimeUnit;
 public class MvcConfiguration implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry){
-        /*registry.addResourceHandler("/**")
-                .addResourceLocations("classpath:/templates/", "classpath:/static/", "classpath:/imgs/")
-                .setCacheControl(CacheControl.maxAge(10 ,TimeUnit.MINUTES));
-                //히히
-                */
-
         registry.addResourceHandler("/qrImg/**")
                 .addResourceLocations("file:///c:/TestQR/qrImg/");
     }

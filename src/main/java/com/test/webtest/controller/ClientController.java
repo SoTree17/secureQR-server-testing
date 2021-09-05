@@ -108,18 +108,11 @@ public class ClientController {
         log.info(responseBody);
 
         // Gson 이용해서 JSON -> POJO 하려 했는데 잘 안되었음
-        // 문자열 파싱함
+        // 문자열 파싱함, 정규 표현식 방법은 byte[] 값에 대해 패턴 매칭을 해서 뭔가 오류나는듯.
         String[] temp = responseBody.split(":");
         String str_ = temp[1].substring(1, temp[1].length() - 2);
         log.info(str_);
 
-        // 정규표현식쓰려했는데 이것도 잘 안되었음.. 아마 이미지 byte코드라서 그런듯
-        /*
-        String regex = "{\"binary\":(.*)";
-        Pattern ptrn = Pattern.compile(regex);
-        Matcher m = ptrn.matcher(responseBody);
-        log.info(m.group(0));
-        */
 
         byte[] binary = Base64.getDecoder().decode(str_);
         qrService.createQRImage(binary, "C:\\TestQR\\qrImg\\Server-Test.png");
@@ -129,72 +122,4 @@ public class ClientController {
 
         return "redirect:";
     }
-
-
-    // TODO Restrofit 사용 하려했는데 자꾸 Body가 NULL 이였음
-    /**
-     * // 백업
-     * @PostMapping("/requestQR")
-     *     public String request(QrDTO qrDTO) throws Exception {
-     *         // HTTP Bod
-     *         String BaseUrl = "http://ec2-3-37-43-9.ap-northeast-2.compute.amazonaws.com:8080/";
-     *         String requestJson = new Gson().toJson(qrDTO);
-     *         String resourcePath = "generator";
-     *         log.info(requestJson);
-     *
-     *         // Retrofit 인스턴스 생성
-     *         Retrofit retrofit = new Retrofit.Builder()
-     *                 .baseUrl(BaseUrl)
-     *                 .addConverterFactory(GsonConverterFactory.create())
-     *                 .build();
-     *         // 사용자 지정 인터페이스를 Retrofit 라이브러리에 의해 인스턴스로 자동 구현,
-     *         RestInterface api = retrofit.create(RestInterface.class);
-     *
-     *         // 인터페이스 함수를 호출하여 Call 객체 생성
-     *         Call call = api.generateQR(resourcePath, requestJson);
-     *
-     *         call.enqueue(new Callback() {
-     *             @Override
-     *             public void onResponse(Call call, Response response) {
-     *                 log.info("연결 성공");
-     *                 String test = new Gson().toJson(response.body());
-     *                 log.info(test);
-     *
-     *                 //byte[] result = qrImage.getBinary();
-     *                 //qrService.createQRImage(result, "C:\\TestQR\\qrImg\\Server-Test.png");
-     *                 log.info("QR 이미지 생성 성공");
-     *             }
-     *
-     *             @Override
-     *             public void onFailure(Call call, Throwable t) {
-     *                 log.info("연결 실패");
-     *             }
-     *         });
-     *         return "redirect:";
-     *     }
-     */
-
-
-    // TODO - 기존 Restrofit 코드 ( RestInterface
-    /*
-    @PostMapping("/test")
-    public String test(QrDTO qrDTO) throws Exception{
-        // HTTP Body
-        String requestJson = new Gson().toJson(qrDTO);
-        String resourcePath = "generator";
-        log.info(requestJson);
-
-        // 요청
-        Call<ResponseBody> call = restInterface.generateQR(CONTENT_TYPE, resourcePath,requestJson);
-        log.info(call.toString());
-
-        Response<ResponseBody> response= call.execute();
-
-        byte[] result = response.body().bytes();
-        log.info(result.toString());
-        // 저장 - home.html 에서 이미지 보여줌
-        qrService.createQRImage(result, "C:\\TestQR\\qrImg\\Server-Test.png");
-        log.info("QR 이미지 생성 완료");
-        return "redirect:";
-    }*/
 }
