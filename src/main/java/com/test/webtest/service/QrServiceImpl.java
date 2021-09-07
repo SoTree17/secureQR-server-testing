@@ -14,8 +14,9 @@ import java.io.IOException;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class QrServiceImpl implements QrService{
+public class QrServiceImpl implements QrService {
     Generator gen = new Generator();
+
     @Override
     public byte[] createSecureQRCode(SecureQrCryptoArray arr, QrDTO qrDTO) throws IOException {
         // 테스트 용 arr 초기화
@@ -25,17 +26,17 @@ public class QrServiceImpl implements QrService{
 
         int d_index = arr.addData(qrDTO.getData());
 
-        if(!isNull(qrDTO)){
+        if (!isNull(qrDTO)) {
             return gen.createSecureQRCode(arr, qrDTO.getAuthUrl(),
                     qrDTO.getC_index(), d_index, qrDTO.getWidth(), qrDTO.getHeight());
-        }else{
+        } else {
             return null;
         }
     }
 
     @Override
     public void createQRImage(byte[] qr_byte_arr, String path) {
-        if(gen.createSecureQRImage(qr_byte_arr, 0, path))
+        if (gen.createSecureQRImage(qr_byte_arr, 0, path))
             log.info("이미지 생성 완료");
         else
             log.info("이미지 생성 실패");
@@ -43,6 +44,6 @@ public class QrServiceImpl implements QrService{
 
     @Override
     public boolean isNull(QrDTO qrDTO) {
-        return qrDTO.getAuthUrl().equals("") && qrDTO.getData().equals("") && qrDTO.getHeight() == 0 && qrDTO.getWidth() ==0;
+        return qrDTO.getAuthUrl().equals("") && qrDTO.getData().equals("") && qrDTO.getHeight() == 0 && qrDTO.getWidth() == 0;
     }
 }
