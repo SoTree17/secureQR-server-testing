@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class QrImage {
+public class QrImageDTO {
     private byte[] binary;
 }

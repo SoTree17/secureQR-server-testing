@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class MvcConfiguration implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry){
+        /* Configuration for path when download secure QR Image */
         registry.addResourceHandler("/qrImg/**")
                 .addResourceLocations("file:///c:/TestQR/qrImg/");
     }
