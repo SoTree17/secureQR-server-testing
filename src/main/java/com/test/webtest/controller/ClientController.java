@@ -68,7 +68,7 @@ public class ClientController {
         CloseableHttpClient client = HttpClients.createDefault();
 
         // HTTP info
-        String BaseUrl = "http://ec2-3-37-43-9.ap-northeast-2.compute.amazonaws.com:8080/";
+        String BaseUrl = qrDTO.getAuthUrl();
         String requestJson = new Gson().toJson(qrDTO);
         String resourcePath = "api/v1/secureQR/generator";
         String requestUrl = BaseUrl + resourcePath;
