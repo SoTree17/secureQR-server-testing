@@ -1,5 +1,12 @@
 # secureQR-web-client Test Application
 
+### 개발 환경
+ &nbsp;개발 언어 : ![JAVA11](http://img.shields.io/badge/-Java11-006cb7?style=flat&logo=Java) & ![JAVA](http://img.shields.io/badge/-Javascript-006cb7?style=flat&logo=Javascript)<br/>
+  &nbsp;개발 환경 :  ![Springboot](http://img.shields.io/badge/-Springboot2.4.5-000000?style=flat&logo=springboot) & ![Springboot](http://img.shields.io/badge/-Gradle6.8.3-006cb7?style=flat&logo=gradle)
+
+
+
+
 ### Description 
 - 암호화된 QR 코드를 생성하는 기능을 하는 클라이언트 웹 어플리케이션 역할을 담당함.
 
