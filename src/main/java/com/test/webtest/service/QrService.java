@@ -2,7 +2,6 @@ package com.test.webtest.service;
 
 import com.test.webtest.domain.QrDTO;
 import crypto.SecureQrCryptoArray;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.IOException;
 
