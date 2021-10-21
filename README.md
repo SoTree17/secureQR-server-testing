@@ -70,7 +70,7 @@
 
 ## Dependency License Report
 _2021-10-21 21:04:04 KST_
-## Apache License, Version 2.0
+### Apache License, Version 2.0
 
 **1** **Group:** `org.apache.httpcomponents` **Name:** `httpclient` **Version:** `4.5.13` 
 > - **POM Project URL**: [http://hc.apache.org/httpcomponents-client](http://hc.apache.org/httpcomponents-client)
@@ -96,5 +96,6 @@ _2021-10-21 21:04:04 KST_
 > - **Embedded license files**: [spring-boot-starter-web-2.5.4.jar/META-INF/LICENSE.txt](spring-boot-starter-web-2.5.4.jar/META-INF/LICENSE.txt) 
     - [spring-boot-starter-web-2.5.4.jar/META-INF/NOTICE.txt](spring-boot-starter-web-2.5.4.jar/META-INF/NOTICE.txt)
 
-## MIT License 
+### MIT License 
 **1** **Name** `BootStrap` **Version:** 4.0.0-beta
+> - **POM License** [https://github.com/twbs/bootstrap/blob/c767a00d5d0b0511400fc8bce63edd6fcf589b27/LICENSE](https://github.com/twbs/bootstrap/blob/c767a00d5d0b0511400fc8bce63edd6fcf589b27/LICENSE)
