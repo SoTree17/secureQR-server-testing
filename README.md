@@ -43,20 +43,27 @@
 
 
 ### 4. 전체적인 설계흐름
-- 먼저 해당 레파지토리는 Sotree17/secure-module 을 라이브러리화 한 jar파일을 사용하여, 
-- Sotree17/secure-server 을 REST API 서버 역할을 두며 해당 서버에 요청함으로써 암호화된 QR 이미지를 사용자에게 보여주는 흐름을 갖음. 
+- 먼저 해당 레파지토리는 `Sotree17/secure-module`를 라이브러리화 한 jar파일을 사용 
+- `Sotree17/secure-server-example`의 결과물을 REST API 서버 역할로 둠
+- 해당 서버에 요청함으로써 암호화된 QR 이미지를 사용자에게 보여주는 흐름을 갖음. 
 
+#####   &nbsp;&nbsp; 암호화된 secureQR 이미지 생성 과정 
+- REST API 서버의 API `/generator` 에 대한 POST 요청을 통해 이루어짐 
+<p align="center"><img height="60%" width="70%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/132015823-f53589db-a641-4cbc-9f13-ae636d502e62.PNG"></p>
 
+(1) 사용자가 입력한 데이터를 기반으로 암호화 QR 생성 요청 <br/>
+(2) 암호화 REST API 서버에서의 인터페이스 구현체 호출 <br/>
+(3) 암호화 QR 라이브러리 Geneator 클래스의 createSecureQRcode() 호출 <br/>
+(3) 암호화 QR 이미지 생성하게됨. <br/>
+(4) 클라이언트에게 `암호화 QR 이미지` byte[] 반환 <br/>
+ 
 
+#####   &nbsp;&nbsp;응답받은 secureQR 이미지 반환 과정
+- 다음의 설계 흐름을 통해 사용자에게 SecureQR 이미지를 보여줌 
+<p align="center"><img height="60%" width="70%" alt="텍스트 정보제공" src="https://user-images.githubusercontent.com/54317409/132016161-6ae74c63-287e-4a60-b0e5-c03af4ebd88a.png"></p>
 
-    #### 먼저 REST API 서버의 /generator 에 대한 POST 요청에 대한 응답으로 암호화된 SecureQR 이미지를 얻을 수 있음.
-![슬라이드1](https://user-images.githubusercontent.com/54317409/132015823-f53589db-a641-4cbc-9f13-ae636d502e62.PNG)
-
-
-   #### 그리고 본 레파지토리의 client 어플리케이션에선 다음의 설계 흐름을 통해 사용자에게 SecureQR 이미지를 보여줌 
-![공소 레포트 준비](https://user-images.githubusercontent.com/54317409/132016161-6ae74c63-287e-4a60-b0e5-c03af4ebd88a.png)
-
-
-
+(1) 응답으로 부터 byte[] 정보 추출 <br/>
+(2) 이미지 파일 저장 경로 설정 <br/>
+(3) 이미지 파일 생성 후 화면에 암호화된 QR 출력 <br/>
 
 
