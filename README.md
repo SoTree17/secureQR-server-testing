@@ -2,13 +2,42 @@
 
 
 ### 1. Description 
-- 암호화된 QR 코드를 생성하는 기능을 하는 클라이언트 웹 어플리케이션 역할을 담당함.
+- 앞서 개발한 `secureQR-module` 라이브러리를 적용한 웹 클라이언트 적용 예시
+- 암호화된 QR 코드를 생성하고 발급하는 역할을 수행하는 예시
+
+<br/>
 
 ### 2. 개발 환경
  &nbsp;개발 언어 : ![JAVA11](http://img.shields.io/badge/-Java11-006cb7?style=flat&logo=Java) & ![JAVA](http://img.shields.io/badge/-Javascript-006cb7?style=flat&logo=Javascript)<br/>
   &nbsp;개발 환경 :  ![Springboot](http://img.shields.io/badge/-Springboot2.5.4-000000?style=flat&logo=springboot) & ![Springboot](http://img.shields.io/badge/-Gradle7.1.1-006cb7?style=flat&logo=gradle)
 
+
+<br/>
+
 ### 3. 실행 방법
+
+- 로컬에서 실행하는 경우
+
+  1. 동봉한 jar 파일을 다운로드 받음.
+
+  2. cmd 나 터미널을 실행
+
+  3. 해당 jar파일 디렉토리로 이동
+
+  4. 다음과 명령어를 입력 
+
+     ``` sh
+     java -jar secureQR-0.0.1-SNAPSHOT.jar
+     ```
+
+  5. 웹 브라우저에 localhost:8080/ 을 입력
+
+  6. 아래의 화면처럼 정보들을 입력
+     
+     ![home](https://user-images.githubusercontent.com/48395704/132034582-11c36a78-79ae-40e9-8f3d-e806115c6237.gif)
+
+
+
 
 
 
@@ -29,7 +58,5 @@
 
 
 
-### 5. QR 코드 생성 페이지
-![home](https://user-images.githubusercontent.com/48395704/132034582-11c36a78-79ae-40e9-8f3d-e806115c6237.gif)
 
 
