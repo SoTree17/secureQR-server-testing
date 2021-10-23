@@ -16,32 +16,6 @@
 
     <link rel="stylesheet" type="text/css" href="/css/helper.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <script>
-        function imgPop(){
-            const url = '/qrImg/Server-Test.png'
-            let img=new Image();
-            img.src = url;
-            const img_width=img.width;
-            const win_width=img.width+25;
-            const img_height=img.height;
-            const left = (screen.width/2)-(img_width/2);
-            const top = (screen.height/2)-(img_height-2);
-            let OpenWindow=window.open(url,'_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto,left='+left+',top='+top);
-            OpenWindow.resizeTo(250,250);
-        }
-        /*$(document).ready(function(){
-            var formObj = $("form[role='form']");
-
-            $('#popupBtn').on("click", function()){
-                var url = $("#url").val(); //
-                const tab_width=500;
-                var OpenWindow = window.open(url, '_blank', 'width='+500+', height='+500+', menubars=no, scrollbars=auto');
-                OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+tab_width+"'>");
-            }
-        })*/
-
-
-    </script>
 
 </head>
 <body>
@@ -49,7 +23,7 @@
 <div class="container-root">
     <div class="container-form">
         <div class="wrap-form">
-            <form class="qr-form validate-form" action="/requestQR" method="post">
+            <form name="userForm" class="qr-form validate-form" action="/requestQR" method="post">
 					<span class="qr-form-title p-t-30 p-b-70">
 						Create SecureQR
 					</span>
@@ -57,7 +31,7 @@
 						<img src="/img/SoTree.png" alt="QR-Image"/>
 					</span>
 
-                <div class="wrap-qr-input validate-input m-t-100 m-b-40" data-validate = "Enter Auth URL">
+                <div class="wrap-qr-input validate-input m-t-100 m-b-40" data-validate="Enter Auth URL">
                     <!-- http://ec2-3-37-43-9.ap-northeast-2.compute.amazonaws.com:8080/ -->
                     <input class="qr-input" type="text" name="authUrl">
                     <span class="focus-qr-input" data-placeholder="Auth URL"></span>
@@ -84,7 +58,7 @@
                 </div>
 
                 <div class="container-qr-form-btn">
-                    <button class="qr-form-btn" type="submit" id = 'popupBtn' onclick="imgPop()">
+                    <button class="qr-form-btn" type="button" id='popupBtn' onclick="formValidCheck()">
                         Create
                     </button>
                 </div>
@@ -95,6 +69,7 @@
 
 <script src="/libs/jquery/jquery-3.2.1.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/warns.js"></script>
 <!--<scirpt src="/js/popup.js"></scirpt>-->
 </body>
 </html>
