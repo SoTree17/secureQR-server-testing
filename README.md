@@ -67,3 +67,35 @@
 (3) 이미지 파일 생성 후 화면에 암호화된 QR 출력 <br/>
 
 
+
+## Dependency License Report
+_2021-10-21 21:04:04 KST_
+### Apache License, Version 2.0
+
+**1** **Group:** `org.apache.httpcomponents` **Name:** `httpclient` **Version:** `4.5.13` 
+> - **POM Project URL**: [http://hc.apache.org/httpcomponents-client](http://hc.apache.org/httpcomponents-client)
+> - **POM License**: Apache License, Version 2.0 - [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+> - **Embedded license files**: [httpclient-4.5.13.jar/META-INF/LICENSE](httpclient-4.5.13.jar/META-INF/LICENSE) 
+    - [httpclient-4.5.13.jar/META-INF/NOTICE](httpclient-4.5.13.jar/META-INF/NOTICE)
+
+**2** **Group:** `org.springframework.boot` **Name:** `spring-boot-devtools` **Version:** `2.5.4` 
+> - **POM Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **POM License**: Apache License, Version 2.0 - [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+> - **Embedded license files**: [spring-boot-devtools-2.5.4.jar/META-INF/LICENSE.txt](spring-boot-devtools-2.5.4.jar/META-INF/LICENSE.txt) 
+    - [spring-boot-devtools-2.5.4.jar/META-INF/NOTICE.txt](spring-boot-devtools-2.5.4.jar/META-INF/NOTICE.txt)
+
+**3** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-thymeleaf` **Version:** `2.5.4` 
+> - **POM Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **POM License**: Apache License, Version 2.0 - [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+> - **Embedded license files**: [spring-boot-starter-thymeleaf-2.5.4.jar/META-INF/LICENSE.txt](spring-boot-starter-thymeleaf-2.5.4.jar/META-INF/LICENSE.txt) 
+    - [spring-boot-starter-thymeleaf-2.5.4.jar/META-INF/NOTICE.txt](spring-boot-starter-thymeleaf-2.5.4.jar/META-INF/NOTICE.txt)
+
+**4** **Group:** `org.springframework.boot` **Name:** `spring-boot-starter-web` **Version:** `2.5.4` 
+> - **POM Project URL**: [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)
+> - **POM License**: Apache License, Version 2.0 - [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+> - **Embedded license files**: [spring-boot-starter-web-2.5.4.jar/META-INF/LICENSE.txt](spring-boot-starter-web-2.5.4.jar/META-INF/LICENSE.txt) 
+    - [spring-boot-starter-web-2.5.4.jar/META-INF/NOTICE.txt](spring-boot-starter-web-2.5.4.jar/META-INF/NOTICE.txt)
+
+### MIT License 
+**1** **Name** `BootStrap` **Version:** 4.0.0-beta
+> - **POM License** [https://github.com/twbs/bootstrap/blob/c767a00d5d0b0511400fc8bce63edd6fcf589b27/LICENSE](https://github.com/twbs/bootstrap/blob/c767a00d5d0b0511400fc8bce63edd6fcf589b27/LICENSE)
