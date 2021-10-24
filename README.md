@@ -35,7 +35,9 @@
   6. 아래의 화면처럼 정보들을 입력
      
      ![home](https://user-images.githubusercontent.com/48395704/132034582-11c36a78-79ae-40e9-8f3d-e806115c6237.gif)
-
+     
+  7. 실행 결과 확인 
+     ![클라3](https://user-images.githubusercontent.com/54317409/138597387-1ba5f753-3348-4676-8ad4-c2cbabc81885.gif)
 
 
 
