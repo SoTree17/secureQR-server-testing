@@ -23,28 +23,15 @@ function formValidCheck() {
         alert("빈칸을 채워주세요.")
     } else {
         content.submit();
+        alert('C:/TestQR/qrImg/Server-Test.png 에 이미지 파일이 생성됩니다!');
        /* sleep(2000);*/
-        imgPopup();
+        //imgPopup();
         //setTimeout(function(){imgPopup('/qrImg/Server-Test.png')},500);
     }
 
 }
-/*function sleep(delay){
+function sleep(delay){
     var start = new Date().getTime();
     while (new Date().getTime() < start + delay);
-}*/
+}
 
-/*
-function imgEvent() {
-    const url = '/qrImg/Server-Test.png'
-    let img = new Image();
-    img.src = url;
-    const img_width = img.width;
-    const win_width = img.width + 25;
-    const img_height = img.height;
-    const left = (screen.width / 2) - (img_width / 2);
-    const top = (screen.height / 2) - (img_height - 2);
-    let OpenWindow = window.open(url, '_blank', 'width=' + img_width + ', height=' + img_height + ', menubars=no, scrollbars=auto,left=' + left + ',top=' + top);
-    OpenWindow.resizeTo(250, 250);
-
-}*/
